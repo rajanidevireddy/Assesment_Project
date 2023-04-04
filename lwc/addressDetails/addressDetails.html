@@ -1,0 +1,39 @@
+<template>
+
+		<div class="slds-var-p-around_small">
+				<div class="address-recommendations" role="listbox">
+						<ul class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid"
+								role="presentation">
+								<template for:each={addressRecommendations} for:item="addressRecommendation">
+										<li key={addressRecommendation.place_id} role="presentation"
+												onclick={handleAddressRecommendationSelect}
+												data-value={addressRecommendation.place_id} 
+												data-name = {addressRecommendation.addressName}
+												class="slds-listbox__item">
+												<span
+															class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta"
+															role="option">
+														<span class="slds-media__body slds-m-left_xx-small slds-m-bottom_xx-small">
+																<div class="slds-grid slds-m-bottom_small">
+																		<div class="slds-col slds-size_1-of-10">
+																				<lightning-button-icon size="medium" icon-name="utility:checkin"
+																															 class="slds-input__icon" variant="bare" onclick={resetAddress}>
+																				</lightning-button-icon>
+																		</div>
+																		<div class="slds-m-left_medium slds-col slds-size_8-of-10">
+																				<span
+																							class="slds-listbox__option-text slds-listbox__option-text_entity"><b>{addressRecommendation.addressName}</b></span>
+																				<span
+																							class="slds-listbox__option-text slds-listbox__option-text_entity slds-m-top_xxx-small">{addressRecommendation.addressName}</span>
+																		</div>
+																		<div class="slds-col slds-size_1-of-10"></div>
+																</div>
+														</span>
+												</span>
+										</li>
+								</template>
+						</ul>
+				</div>
+		</div>
+		</div>
+</template>

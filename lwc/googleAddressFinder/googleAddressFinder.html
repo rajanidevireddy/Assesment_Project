@@ -1,0 +1,44 @@
+<template>
+		<lightning-layout>
+				<lightning-layout-item size="12">
+						<lightning-card title="Find a Address" icon-name="standard:address">
+								<lightning-input name="Source"
+																 label="origin Address"
+																 type="search"
+																 class ="inputWidth"
+																 onchange = {setSourceAddress}
+																 value ={selectedSourceName}
+																 required>
+								</lightning-input>
+								<lightning-input name="Destinaion"
+																 label="Destination Address"
+																 type="search"
+																 class ="inputWidth"
+																 onchange = {setDestinationAddress}
+																 value ={selectedLDestinationName}
+																 required>
+								</lightning-input>
+								<div slot="footer">
+										<lightning-button label="Get Directions" onclick={getDirections} ></lightning-button>
+								</div>
+								<div lwc:if={hasRecommendations}>
+										<c-address-details address-recommendations={addressRecommendations} 
+																			 evt-source={evtSource} 
+																			 onaddressselect={handleAddressRecommendationSelection}>
+										</c-address-details>
+								</div>
+						</lightning-card>
+				</lightning-layout-item>
+		</lightning-layout>
+		<template lwc:if={isLoading}>
+				<lightning-spinner alternative-text="Loading" 
+													 variant="brand" 
+													 size="large">
+				</lightning-spinner>
+		</template> 
+		<br/><br/><br/>
+		<div lwc:if={hasAddressDirections} >
+				<c-driving-details address-directions={addressDirections}>
+				</c-driving-details>
+		</div>
+</template>

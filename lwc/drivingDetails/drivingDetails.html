@@ -1,0 +1,23 @@
+<template>
+		<lightning-card title="Travel Details(via:Driving)" icon-name="standard:address">
+				<div class="slds-align_absolute-center">
+						<B>MODE OF TRAVEL :      </B> CAR
+				</div>
+				<div class="slds-align_absolute-center">
+						<B>SOURCE LOCATION       :</B>&nbsp; {addressDirections.start_address}
+				</div>
+				<div class="slds-align_absolute-center">
+						<B>DESTINATION LOCATION  :</B>&nbsp; {addressDirections.end_address}
+				</div>
+				<div class="slds-align_absolute-center">
+						<B>DISTANCE(KM's)        :</B>&nbsp; {addressDirections.distance}
+				</div>
+				<div class="slds-align_absolute-center">
+						<B>TRAVEL Time           :</B>&nbsp; {addressDirections.duration}
+				</div>
+				<div class="slds-align_absolute-center">
+						<B>TRAVEL COST($)        :</B>&nbsp; {addressDirections.calculatedRate}
+				</div>		
+		</lightning-card>
+
+</template>
